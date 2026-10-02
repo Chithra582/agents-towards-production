@@ -1,0 +1,25 @@
+name: "telemetry-trace-exporter"
+description: "Instruments agent execution cycles and exports structured OpenTelemetry and LangSmith traces."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "start_span"
+        - "end_span"
+        - "export_trace"
+        - "get_run_metrics"
+      description: "Tracing telemetry operation."
+    trace_id:
+      type: string
+      description: "Unique trace session identifier."
+    span_name:
+      type: string
+      description: "Descriptive name of the execution step or node."
+    metadata:
+      type: object
+      description: "Key-value attributes (token counts, latency, status codes, model names)."
+  required:
+    - action
+    - trace_id

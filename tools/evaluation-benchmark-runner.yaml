@@ -1,0 +1,23 @@
+name: "evaluation-benchmark-runner"
+description: "Executes standardized agentic quality, latency, and correctness evaluation benchmarks."
+input_schema:
+  type: object
+  properties:
+    benchmark_name:
+      type: string
+      enum:
+        - "intellagent"
+        - "rag_faithfulness"
+        - "tool_call_accuracy"
+        - "custom_suite"
+      description: "Evaluation benchmark suite to execute."
+      default: "intellagent"
+    dataset_path:
+      type: string
+      description: "Path to the JSON/CSV evaluation dataset containing test cases and ground truth."
+    max_eval_samples:
+      type: integer
+      description: "Maximum number of test samples to evaluate."
+      default: 50
+  required:
+    - benchmark_name

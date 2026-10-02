@@ -1,0 +1,26 @@
+name: "agent-graph-compiler"
+description: "Validates, compiles, and visualizes stateful agent workflow graphs and execution topologies."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "compile"
+        - "validate"
+        - "visualize"
+      description: "Graph operation to perform."
+    graph_definition:
+      type: string
+      description: "Python code or JSON specification defining state schema, nodes, and conditional edges."
+    framework:
+      type: string
+      enum:
+        - "langgraph"
+        - "fastapi"
+        - "aws_agentcore"
+      description: "Target orchestration framework."
+      default: "langgraph"
+  required:
+    - action
+    - graph_definition

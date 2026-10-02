@@ -1,0 +1,31 @@
+name: "memory-layer-integrator"
+description: "Configures, provisions, and tests vector and key-value memory retrieval stores for agents."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "configure"
+        - "store"
+        - "retrieve"
+        - "clear"
+      description: "Memory persistence action."
+    backend:
+      type: string
+      enum:
+        - "redis"
+        - "mem0"
+        - "cognee"
+        - "sqlite"
+      description: "Underlying storage backend."
+      default: "mem0"
+    tenant_id:
+      type: string
+      description: "Unique tenant or user identifier for namespace partitioning."
+    payload:
+      type: string
+      description: "Content string or query vector to process."
+  required:
+    - action
+    - tenant_id

@@ -1,0 +1,22 @@
+spec_version: "0.1.0"
+name: "agents-towards-production"
+version: "1.0.0"
+description: "Open-source playbook and engineering framework for turning GenAI agents into production-grade, observable, and secure products."
+author: "Nir Diamant & OpenGAP Contributors"
+license: "MIT"
+metadata:
+  domain: "Developer Tools / Production-Grade Agent Engineering & MLOps"
+  category: "Developer Tools"
+  framework: "Agents Towards Production MLOps & LangGraph/FastAPI Pipeline"
+  language: "Python"
+skills:
+  - "production-agent-orchestration"
+  - "agent-memory-persistence"
+  - "agent-security-guardrails"
+  - "observability-evaluation-pipeline"
+tools:
+  - "agent-graph-compiler"
+  - "memory-layer-integrator"
+  - "security-guardrail-auditor"
+  - "telemetry-trace-exporter"
+  - "evaluation-benchmark-runner"

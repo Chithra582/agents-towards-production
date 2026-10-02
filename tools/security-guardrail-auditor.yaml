@@ -1,0 +1,23 @@
+name: "security-guardrail-auditor"
+description: "Audits agent prompts, inputs, and tool calls for injection risks, leakage, and permission bypasses."
+input_schema:
+  type: object
+  properties:
+    input_text:
+      type: string
+      description: "User prompt, retrieved text, or tool argument payload to evaluate."
+    guardrail_profile:
+      type: string
+      enum:
+        - "prompt_injection"
+        - "pii_leakage"
+        - "unauthorized_tool_call"
+        - "strict_enterprise"
+      description: "Security scanning profile to enforce."
+      default: "strict_enterprise"
+    redact_sensitive:
+      type: boolean
+      description: "Whether to automatically redact detected secrets or personal identifiers."
+      default: true
+  required:
+    - input_text
